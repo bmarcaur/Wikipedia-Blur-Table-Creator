@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/blur-core-0.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/blur-store-0.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/blur-thrift-0.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/blur-util-0.1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/concurrentlinkedhashmap-lru-1.2.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/libthrift-0.7.0.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/lucene-core-3.5.0.lm.jar"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/zookeeper-3.3.4.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>
