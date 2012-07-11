@@ -3,8 +3,6 @@ package processes;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
-import com.nearinfinity.blur.thrift.generated.RecordMutationType;
-
 import parsers.*;
 import loaders.*;
 
