@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="/home/bmarcaur/nic-work/libraries/hadoop-0.22.0/hadoop-common-0.22.0.jar"/>
-	<classpathentry kind="lib" path="/home/bmarcaur/nic-work/libraries/hadoop-0.22.0/hadoop-mapred-0.22.0.jar"/>
+	<classpathentry kind="lib" path="hadoop-core-0.20.2-cdh3u4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

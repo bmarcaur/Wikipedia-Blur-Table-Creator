@@ -69,7 +69,12 @@ public class WikipediaHadoopDataProcess {
 		public void reduce(IntWritable key, Iterator<Text> values, OutputCollector<IntWritable, Text> output, Reporter reporter) throws IOException {
 			String fullCombinedColumns = new String();
 			while(values.hasNext()){
-				fullCombinedColumns += values.next().toString() + '\t';
+				String columns = values.next().toString();
+				if(columns.split("\\t").length < 4){
+					fullCombinedColumns += '\t' + columns;
+				} else {
+					fullCombinedColumns = columns + '\t' + fullCombinedColumns;
+				}
 			}
 			output.collect(key, new Text(fullCombinedColumns.trim()));
 		}
