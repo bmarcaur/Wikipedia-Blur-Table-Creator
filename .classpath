@@ -3,5 +3,12 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="lib" path="hadoop-core-0.20.2-cdh3u4.jar"/>
+	<classpathentry kind="lib" path="libthrift-0.7.0.jar"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/blur-core"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/blur-mapred"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/blur-store"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/blur-thrift"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/blur-util"/>
+	<classpathentry kind="lib" path="/Users/nic-bmarcaur/nic-projects/libraries/commons-logging-1.1.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

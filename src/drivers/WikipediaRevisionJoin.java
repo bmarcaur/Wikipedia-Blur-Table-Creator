@@ -1,4 +1,4 @@
-package processes;
+package drivers;
 
 import java.io.IOException;
 import java.util.Date;
@@ -20,9 +20,9 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.TextOutputFormat;
 import org.apache.hadoop.mapred.lib.MultipleInputs;
 
-public class WikipediaHadoopDataProcess {
+public class WikipediaRevisionJoin {
 	public static void main(String[] args) throws IOException {
-		JobConf configuration = new JobConf(WikipediaHadoopDataProcess.class);
+		JobConf configuration = new JobConf(WikipediaRevisionJoin.class);
 		configuration.setJobName("Wikipedia Data");
 		
 		configuration.setOutputKeyClass(IntWritable.class);
@@ -31,12 +31,12 @@ public class WikipediaHadoopDataProcess {
 		configuration.setCombinerClass(Reduce.class);
 		configuration.setReducerClass(Reduce.class);
 		
-		MultipleInputs.addInputPath(configuration, new Path("/wikidata/" + args[0]), TextInputFormat.class, RevisionMapper.class);
-		MultipleInputs.addInputPath(configuration, new Path("/wikidata/" + args[1]), TextInputFormat.class, CommentMapper.class);
+		MultipleInputs.addInputPath(configuration, new Path("/bmarcaur/data/training.tsv"), TextInputFormat.class, RevisionMapper.class);
+		MultipleInputs.addInputPath(configuration, new Path("/bmarcaur/data/comments.tsv"), TextInputFormat.class, CommentMapper.class);
 		
 		configuration.setOutputFormat(TextOutputFormat.class);
 		Date today = new Date();
-		FileOutputFormat.setOutputPath(configuration, new Path("/wikioutput/revisions/" + today.getDay() + '_' + today.getHours() + '_' + today.getMinutes()));
+		FileOutputFormat.setOutputPath(configuration, new Path("/bmarcaur/data/revisions/" + today.getDay() + '_' + today.getHours() + '_' + today.getMinutes()));
 		
 		JobClient.runJob(configuration);
 	}
@@ -79,7 +79,7 @@ public class WikipediaHadoopDataProcess {
 				if(columns.split("\\t").length < 4){
 					fullCombinedColumns += '\t' + columns;
 				} else {
-					fullCombinedColumns = columns + '\t' + fullCombinedColumns;
+					fullCombinedColumns = columns + fullCombinedColumns;
 				}
 			}
 			output.collect(key, new Text(fullCombinedColumns.trim()));
