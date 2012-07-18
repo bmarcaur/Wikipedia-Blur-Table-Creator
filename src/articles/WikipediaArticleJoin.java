@@ -1,9 +1,7 @@
-package drivers;
+package articles;
 
 import java.io.IOException;
 import java.util.Calendar;
-import mappers.article.ArticleMapper;
-import mappers.article.RevisionMapper;
 
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
@@ -15,7 +13,10 @@ import org.apache.hadoop.mapred.TextInputFormat;
 import org.apache.hadoop.mapred.TextOutputFormat;
 import org.apache.hadoop.mapred.lib.MultipleInputs;
 
-import reducers.article.ArticleReducer;
+import articles.mappers.ArticleMapper;
+import articles.mappers.RevisionMapper;
+import articles.reducers.ArticleReducer;
+
 
 
 public class WikipediaArticleJoin {

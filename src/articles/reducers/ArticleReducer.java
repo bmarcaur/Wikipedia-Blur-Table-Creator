@@ -1,4 +1,4 @@
-package reducers.article;
+package articles.reducers;
 
 import java.io.IOException;
 import java.util.HashSet;

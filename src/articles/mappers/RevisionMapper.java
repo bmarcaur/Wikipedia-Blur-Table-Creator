@@ -1,4 +1,4 @@
-package mappers.article;
+package articles.mappers;
 
 import java.io.IOException;
 

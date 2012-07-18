@@ -1,4 +1,4 @@
-package test;
+package test_scripts;
 
 import org.apache.thrift.TException;
 

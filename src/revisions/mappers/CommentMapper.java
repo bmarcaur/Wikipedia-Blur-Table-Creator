@@ -1,4 +1,4 @@
-package mappers.article;
+package revisions.mappers;
 
 import java.io.IOException;
 
@@ -10,17 +10,17 @@ import org.apache.hadoop.mapred.Mapper;
 import org.apache.hadoop.mapred.OutputCollector;
 import org.apache.hadoop.mapred.Reporter;
 
-public class ArticleMapper extends MapReduceBase implements Mapper<LongWritable, Text, IntWritable, Text>  {
-	private IntWritable articleId = new IntWritable();
+public class CommentMapper extends MapReduceBase  implements Mapper<LongWritable, Text, IntWritable, Text> {
+	private IntWritable revisionId = new IntWritable();
 	private Text combinedColumns = new Text();
 	
 	public void map(LongWritable key, Text value, OutputCollector<IntWritable, Text> output, Reporter reporter) throws IOException {
 		try{
 			String columns = value.toString();
-			String rawArticleId = columns.split("\\t")[0];
-			articleId.set(Integer.parseInt(rawArticleId));
-			combinedColumns.set(columns);
-			output.collect(articleId, combinedColumns);
+			String rawRevisionId = columns.split("\\t")[0];
+			revisionId.set(Integer.parseInt(rawRevisionId));
+			combinedColumns.set(columns.split("\\t")[1]);
+			output.collect(revisionId, combinedColumns);
 		} catch (NumberFormatException e){}
 	}
 }

@@ -1,4 +1,4 @@
-package mappers.blur;
+package blurload.mappers;
 
 import java.io.IOException;
 

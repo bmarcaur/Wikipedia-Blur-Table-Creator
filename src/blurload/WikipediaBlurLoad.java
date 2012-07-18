@@ -1,8 +1,6 @@
-package drivers;
+package blurload;
 
 import java.util.Calendar;
-import mappers.blur.BlurArticleMapper;
-import mappers.blur.BlurRevisionMapper;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
@@ -15,6 +13,9 @@ import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
+
+import blurload.mappers.BlurArticleMapper;
+import blurload.mappers.BlurRevisionMapper;
 
 import com.nearinfinity.blur.mapreduce.BlurTask;
 import com.nearinfinity.blur.thrift.BlurClient;
